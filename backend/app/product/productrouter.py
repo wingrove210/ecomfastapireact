@@ -4,8 +4,8 @@ from sqlalchemy.orm import Session
 from dto.productschema import ProductSchema
 from config.database import get_db
 import csv
-
-from .productservice import ProductService
+# from productservice import ProductService
+from product.productservice import ProductService
 
 router = APIRouter(prefix="/product", tags=["Products"])
 
@@ -17,7 +17,7 @@ def getallProduct(db: Session = Depends(get_db)):
 
 @router.get("/recommendation")
 def get_recommendation(db: Session = Depends(get_db)):
-    return ProductService.recommend_products(db);
+    return ProductService.recommend_products(db)
 
 @router.get("/export-csv")
 def export_csv(db: Session = Depends(get_db)):
