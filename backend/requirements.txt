@@ -1,0 +1,15 @@
+fastapi
+pydantic
+sqlalchemy
+psycopg2
+bcrypt
+uvicorn
+pyjwt
+passlib
+stripe
+transformers
+tensorflow
+nltk
+textblob
+pandas
+numpy
