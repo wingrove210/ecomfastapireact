@@ -7,7 +7,8 @@ const myStyles = {
   inactiveFillColor: '#fbf1a9',
 };
 
-export default function Product({ product }) {
+export default function Product( product ) {
+  
   return (
     <div className="text-left">
       <div>
