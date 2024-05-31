@@ -61,6 +61,9 @@ class ProductService:
             "countInStock": product.countInStock,
             "price": product.price,
             "rating": float(product.rating),
+            "sort": product.sort,
+            "type": product.type,
+            "season": product.season,
         } for product in products])
 
         # Membuat model Nearest Neighbors
@@ -90,7 +93,10 @@ class ProductService:
             "image": product["image"],
             "countInStock": product["countInStock"],
             "price": product["price"],
-            "rating": product["rating"]
+            "rating": product["rating"], 
+            "type": product["type"],
+            "sort": product["sort"],
+            "season": product["season"],
         } for product in top_recommended_products]
 
         # Menghitung metrik akurasi
@@ -120,6 +126,9 @@ class ProductService:
             price=request.price,
             countInStock=request.countInStock,
             rating=request.rating,
+            sort=request.sort,
+            type=request.type,
+            season=request.season
         )
 
         db.add(new_product)
@@ -167,6 +176,9 @@ class ProductService:
             "description": show_p.description,
             "countInStock": show_p.countInStock,
             "reviews": reviews_with_sentiment,  
+            "sort": show_p.sort,
+            "type": show_p.type,
+            "season": show_p.season
         }
 
         return response
@@ -183,6 +195,10 @@ class ProductService:
         product_id.price = request.price
         product_id.countInStock = request.countInStock
         product_id.rating = request.rating
+        product_id.sort = request.sort
+        product_id.type = request.type
+        product_id.season = request.season
+
         db.commit()
 
         return product_id

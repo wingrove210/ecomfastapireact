@@ -12,8 +12,12 @@ class ReviewSchema(BaseModel):
 class ProductSchema(BaseModel):
     name: str
     image: str
-    category: str
+    category: int
     description: str
     price: int
     countInStock: int
     rating: Optional[int]
+    type: int
+    sort: int
+    season: int
+

@@ -50,7 +50,10 @@ def show_product(productid: int, db: Session):
         "name": show_p.name,
         "description": show_p.description,
         "countInStock": show_p.countInStock,
-        "reviews": reviews_with_sentiment,  
+        "reviews": reviews_with_sentiment, 
+        "type": show_p.type,
+        "season:": show_p.season,
+        "sort": show_p.sort,
     }
 
     return response
