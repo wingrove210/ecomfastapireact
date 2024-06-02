@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { logoutUser } from '../redux/user.slice';
 
@@ -31,12 +31,59 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white border-gray-200">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 relative">
+      <div className="max-w-screen flex items-center justify-between mx-20 p-4 relative">
         <Link to="/" className="flex items-center">
           <span className="self-center text-2xl font-semibold whitespace-nowrap">
-            Mamang Rust
+          ЦВЕТЫ ОТ ГОГИ
           </span>
         </Link>
+        <ul className='flex justify-between w-[25vw]'>
+              <li>
+                <Link
+                  to="/"
+                  className="block py-2 pl-3 pr-4 text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-black md:hover:font-bold md:p-0 transition-all duration-300 ease-in-out"
+                  aria-current="page"
+                >
+                  ТЮЛьПАНЫ
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/"
+                  className="block py-2 pl-3 pr-4 text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-black md:hover:font-bold md:p-0 transition-all duration-300 ease-in-out"
+                  aria-current="page"
+                >
+                  РОЗЫ
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/"
+                  className="block py-2 pl-3 pr-4 text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-black md:hover:font-bold md:p-0 transition-all duration-300 ease-in-out"
+                  aria-current="page"
+                >
+                  ЛОТУС
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/"
+                  className="block py-2 pl-3 pr-4 text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-black md:hover:font-bold md:p-0 transition-all duration-300 ease-in-out"
+                  aria-current="page"
+                >
+                  РОМАШКИ
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/"
+                  className="block py-2 pl-3 pr-4 text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-black md:hover:font-bold md:p-0 transition-all duration-300 ease-in-out"
+                  aria-current="page"
+                >
+                  ГОРШКИ
+                </Link>
+              </li>
+            </ul>
         <button
           type="button"
           className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
@@ -64,16 +111,8 @@ export default function Navbar() {
           } w-full md:block md:w-auto`}
           id="navbar-dropdown"
         >
+          
           <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-white md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent">
-            <li>
-              <Link
-                to="/"
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
-                aria-current="page"
-              >
-                Home
-              </Link>
-            </li>
             {currentUser ? (
               <>
                 <li className="relative">

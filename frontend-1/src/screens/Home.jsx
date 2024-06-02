@@ -4,19 +4,23 @@ import { getAllProducts } from '../redux/product.slice';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { Rating, Star} from '@smastrom/react-rating';
+import background_1 from '../assets/Blackgroud img 1.svg';
+import background_2 from '../assets/Blackgroud img 2.svg';
+// import background_2 from '../assets/background_2.jpg';
 
-const myStyles = {
-  itemShapes: Star,
-  activeFillColor: '#ffb700',
-  inactiveFillColor: '#fbf1a9',
-};
+
+
+// const myStyles = {
+//   itemShapes: Star,
+//   activeFillColor: '#ffb700',
+//   inactiveFillColor: '#fbf1a9',
+// };
 export default function HomeScreen() {
   const [prod, setProducts] = useState([]);
-  const getallproductstate = useSelector((state) => state.productReducer);
+  // const getallproductstate = useSelector((state) => state.productReducer);
   const loginReducer = useSelector((state) => state.loginReducer);
 
-  const { accuracy } = getallproductstate;
+  // const { accuracy } = getallproductstate;
   const {  currentUser } = loginReducer;
 
   const dispatch = useDispatch();
@@ -38,19 +42,14 @@ export default function HomeScreen() {
 
   return (
     <div className='mt-10'>
-      <h1 className="text-center text-2xl font-bold mt-4">
-        Recommendation Products based berdasarkan Rating dan Price
-      </h1>
-      <p className="text-center text-xl font-semibold">
-        Accuracy: {accuracy}
-      </p>
-
-      <div className="flex flex-wrap justify-center mt-4 mx-2">
+      <img className='absolute bottom-0 left-0' src={background_1} alt='' />
+      <img className='absolute top-[30vh] right-0' src={background_2} alt='' />
+      <div className="grid grid-cols-3 gap-4 w-full mt-4 px-[20vw]">
         {
           prod.map((product) => {
             console.log(product.price)
             return(
-            <div key={product.id} className={"w-full md:w-1/4 m-2" + product.id}>
+            <div key={product.id} className={"w-[20vw] m-2" + product.id}>
               <div className="shadow p-3 bg-white rounded">
               <div className="text-left">
                     <div>
@@ -63,15 +62,18 @@ export default function HomeScreen() {
                           />
                         </div>
                         <h1 className="text-xl font-semibold">{product.name}</h1>
-
-                        <Rating
+                        <h1 className="text-lg font-semibold">{product.price} P</h1>
+                        <h1>ID: {product.id}</h1>
+                        <h1>ВИД: {product.type}</h1>
+                        <h1>СОРТ: {product.sort}</h1>
+                        <h1>СЕЗОН ЦВЕТЕНИЯ: {product.season}</h1>
+                        <button className='bg-[#9E1B3B] px-7 py-2 rounded-3xl text-white mt-5'>Купить</button>
+                        {/* <Rating
                           value={product.rating}
                           readOnly={true}
                           itemStyles={myStyles}
                           style={{ maxWidth: 250 }}
-                        />
-
-                        <h1 className="text-lg font-semibold">Price: {product.price}</h1>
+                        /> */}
                       </Link>
                     </div>
                   </div>

@@ -3,8 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import Loader from '../components/Loader';
 import Error from '../components/Error';
 import Success from '../components/Success';
-import { Link } from 'react-router-dom';
 import { registerNewUser } from '../redux/user.slice';
+import background_1 from '../assets/Blackgroud img 1.svg';
+import background_2 from '../assets/Blackgroud img 2.svg';
 
 export default function RegisterScreen() {
   const registerstate = useSelector((state) => state.registerReducer);
@@ -39,10 +40,12 @@ export default function RegisterScreen() {
 
   return (
     <div className="flex justify-center items-center h-screen">
-      <div className="w-full max-w-md mt-[-20px]">
-        <div className="bg-white shadow-lg p-6 rounded-lg">
-          <h2 className="text-center text-2xl font-semibold mb-6">Register</h2>
-          <i className="fa fa-user-plus text-3xl mb-6 mx-auto"></i>
+              <img className='absolute bottom-0 left-0' src={background_1} alt='' />
+      <img className='absolute top-[30vh] right-0' src={background_2} alt='' />
+      <div className="w-[20vw] max-w-md mt-[-20px]">
+      <div className="bg-[#FAFAFA] shadow-lg shadow-[#DAEFDE] p-6 rounded-3xl">
+        <h2 className="text-left text-2xl font-semibold mb-6 text-green-500">РЕГИСТРАЦИЯ</h2>
+
 
           {loading && <Loader />}
           {error && <Error error="Email Address is already registered" />}
@@ -86,18 +89,22 @@ export default function RegisterScreen() {
             />
 
             <div className="text-right">
-              <button
+            <button
                 type="submit"
-                className="bg-blue-500 text-white px-4 py-2 rounded"
+                className="bg-green-500 text-white w-full py-2 rounded-3xl uppercase"
               >
-                REGISTER
+                Регестрация
               </button>
             </div>
           </form>
-
-          <Link to="/login" className="block mt-4 text-center">
-            Click Here To Login
-          </Link>
+          <div className='flex items-center justify-center gap-3 mt-3'>
+            <span className='bg-[#DAEFDE] w-[5vw] h-[2px]'></span>
+            <span className='text-green-600 text-sm'>ИЛИ</span>
+            <span className='bg-[#DAEFDE] w-[5vw] h-[2px]'></span>
+          </div>
+          <a href="/login" className="block mt-3 text-center w-full bg-[#F2F4F5] py-2 rounded-3xl uppercase border-[1px] border-green-500">
+          Войти как гость
+          </a>
         </div>
       </div>
     </div>

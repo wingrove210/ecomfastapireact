@@ -4,7 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addItemToCart } from '../redux/cart.slice';
 import Loader from '../components/Loader';
 import Error from '../components/Error';
-import Review from '../components/Review';
+import background_1 from '../assets/Blackgroud img 1.svg';
+import background_2 from '../assets/Blackgroud img 2.svg';
+// import Review from '../components/Review';
+
 import { getProductById } from '../redux/product.slice';
 
 export default function ProductDetails() {
@@ -42,28 +45,26 @@ export default function ProductDetails() {
   }
 
   return (
-    <div className="max-w-screen-xl mx-auto mt-10">
+    <div className="max-w-[70vw] ml-[5vw] mt-10">
+            <img className='absolute bottom-0 left-0' src={background_1} alt='' />
+      <img className='absolute top-[30vh] right-0' src={background_2} alt='' />
       {product && (
         <>
-          <div className="">
+          <div className="flex justify-start items-center">
             <div className="flex flex-col md:flex-row">
-              <div className="md:w-1/2">
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  className="w-full h-auto"
-                />
-              </div>
-              <div className="md:w-1/2 md:pl-8 mt-4 md:mt-0">
-                <h1 className="text-xl xl:text-2xl font-medium mb-1">
-                  {product.title}
+              <div className="w-full md:pl-8 mt-4 md:mt-0">
+                <h1 className="text-xl xl:text-2xl font-bold mb-1">
+                  {product.name}
                 </h1>
 
-                <p>{product.description}</p>
                 <div className="m-2">
-                  <h1>Price: {product.price}</h1>
-                  <hr />
-                  <h1>Selected Quantity</h1>
+                  <h1 className='mt-3 mb-3 text-2xl font-medium'>{product.price} P</h1>
+                  <h1>ID: {product.id}</h1>
+                  <h1>СТРАНА: {product.type}</h1>
+                  <h1>СОРТ: {product.sort}</h1>
+                  <h1>СЕЗОН ЦВЕТЕНИЯ: {product.season}</h1>
+                  <p className='mt-3'>{product.description}</p>
+                  <h1 className='mt-3'>Selected Quantity</h1>
                   <select
                     value={quantity}
                     onChange={(e) => setQuantity(e.target.value)}
@@ -72,14 +73,13 @@ export default function ProductDetails() {
                       return <option value={i + 1}>{i + 1}</option>;
                     })}
                   </select>
-
-                  <hr />
+                  <br />
                   {product.countInStock > 0 ? (
                     <button
-                      className="bg-gray-800 text-white py-2 px-4 rounded-md mt-6"
+                      className="bg-[#9E1B3B] mt-5 text-white py-2 px-4 rounded-3xl cursor-pointer"
                       onClick={addCart}
                     >
-                      Add to Cart
+                      КУПИТЬ
                     </button>
                   ) : (
                     <div>
@@ -93,10 +93,16 @@ export default function ProductDetails() {
                     </div>
                   )}
                 </div>
-                <hr />
-                <Review product={product} />
+                {/* <Review product={product} /> */}
               </div>
             </div>
+            <div className="w-[55vw]">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-[55vw]"
+                />
+              </div>
           </div>
         </>
       )}

@@ -4,6 +4,8 @@ import {
   updateCartQuantity,
 } from '../redux/cart.slice';
 import Checkout from '../components/Checkout';
+// import background_1 from '../assets/Blackgroud img 1.svg';
+// import background_2 from '../assets/Blackgroud img 2.svg';
 
 export default function CartScreen() {
   const cartreducerstate = useSelector((state) => state.cartReducer);
@@ -19,24 +21,16 @@ export default function CartScreen() {
     <div className="relative overflow-x-auto">
       <div className="flex justify-center">
         <div className="w-full md:w-2/3 card text-center shadow p-3 mb-5 bg-white rounded">
-          <div className="text-center m-5">My Cart</div>
+          <div className="w-full text-center m-5 border-b-2 border-stone-500 pb-2">
+            <h1 className="text-2xl font-bold">ВАШ ЗАКАЗ :</h1>
+          </div>
           <div className="overflow-x-auto">
             <table className="table-auto w-full">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
-                  <th>Total Price</th>
-                  <th>Delete</th>
-                </tr>
-              </thead>
               <tbody>
                 {cartItems.map((item) => {
                   return (
                     <tr key={item.id}>
                       {' '}
-                      {/* Add a unique key for each row */}
                       <td>{item.name}</td>
                       <td>{item.price}</td>
                       <td>
