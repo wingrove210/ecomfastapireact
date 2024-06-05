@@ -100,7 +100,7 @@ export default function ProductDetails() {
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-[55vw]"
+                  className="w-[30vw]"
                 />
               </div>
           </div>

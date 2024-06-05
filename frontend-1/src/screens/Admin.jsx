@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export default function AdminScreen() {
-  // const currentUser = useSelector((state) => state.loginReducer.currentUser);
+  const currentUser = useSelector((state) => state.loginReducer.currentUser);
 
-  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  // const currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
   useEffect(() => {
     console.log('currentUser:', currentUser);

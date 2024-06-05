@@ -19,9 +19,9 @@ class ProductModel(Base):
     price = Column(Integer)
     countInStock = Column(Integer)
     rating = Column(Integer)
-    type = Column(Integer)
-    sort = Column(Integer)
-    season = Column(Integer)
+    type = Column(String(25))
+    sort = Column(String(25))
+    season = Column(String(25))
 
     reviews_user = relationship("ReviewModel", back_populates="product")
 

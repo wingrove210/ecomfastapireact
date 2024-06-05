@@ -6,26 +6,26 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import background_1 from '../assets/Blackgroud img 1.svg';
 import background_2 from '../assets/Blackgroud img 2.svg';
-// import background_2 from '../assets/background_2.jpg';
 
 
-
-// const myStyles = {
-//   itemShapes: Star,
-//   activeFillColor: '#ffb700',
-//   inactiveFillColor: '#fbf1a9',
-// };
+const categories = [
+  { id: 0, name: 'Тюльпаны' },
+  { id: 1, name: 'Розы' },
+  { id: 2, name: 'ЛОТУС' },
+  { id: 2, name: 'РОМАШКИ' },
+  { id: 2, name: 'ГОРШКИ' },
+];
 export default function HomeScreen() {
   const [prod, setProducts] = useState([]);
-  // const getallproductstate = useSelector((state) => state.productReducer);
   const loginReducer = useSelector((state) => state.loginReducer);
-
-  // const { accuracy } = getallproductstate;
+  const [selectedCategory, setSelectedCategory] = useState(null);
   const {  currentUser } = loginReducer;
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+  };
   useEffect(() => {
     dispatch(getAllProducts());
     axios.get('http://127.0.0.1:8000/api/product').then((e) => {
@@ -40,13 +40,29 @@ export default function HomeScreen() {
     }
   }, [navigate]);
 
+  const filteredProducts = prod.filter((product) => {
+    if (selectedCategory) {
+      return product.category === (selectedCategory.name).toString();
+    }
+    return true;
+  });
+
   return (
     <div className='mt-10'>
       <img className='absolute bottom-0 left-0' src={background_1} alt='' />
       <img className='absolute top-[30vh] right-0' src={background_2} alt='' />
+      <ul className='flex justify-center gap-8 top-[-8vh] relative'>
+        {categories.map((category) => (
+          <li key={category.id} className='cursor-pointer text-stone-500 hover:text-black transition-all duration-300 ease-in-out'>
+            <a href="#" onClick={() => handleCategoryClick(category)}>
+              {category.name}
+            </a>
+          </li>
+        ))}
+      </ul>
       <div className="grid grid-cols-3 gap-4 w-full mt-4 px-[20vw]">
         {
-          prod.map((product) => {
+          filteredProducts.map((product) => {
             console.log(product.price)
             return(
             <div key={product.id} className={"w-[20vw] m-2" + product.id}>
@@ -65,15 +81,10 @@ export default function HomeScreen() {
                         <h1 className="text-lg font-semibold">{product.price} P</h1>
                         <h1>ID: {product.id}</h1>
                         <h1>ВИД: {product.type}</h1>
+                        <h1>Категория: {product.category}</h1>
                         <h1>СОРТ: {product.sort}</h1>
                         <h1>СЕЗОН ЦВЕТЕНИЯ: {product.season}</h1>
                         <button className='bg-[#9E1B3B] px-7 py-2 rounded-3xl text-white mt-5'>Купить</button>
-                        {/* <Rating
-                          value={product.rating}
-                          readOnly={true}
-                          itemStyles={myStyles}
-                          style={{ maxWidth: 250 }}
-                        /> */}
                       </Link>
                     </div>
                   </div>

@@ -57,4 +57,7 @@ def updateProduct(
 def deleteProduct(productid: int, db: Session = Depends(get_db)):
     return ProductService.delete_product(productid=productid, db=db)
 
+# @router.get("/{category_id}")
+# async def read_products(category_id: int):
+    # return [product for product in products if product.category == category_id]
 

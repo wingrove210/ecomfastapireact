@@ -37,53 +37,6 @@ export default function Navbar() {
           ЦВЕТЫ ОТ ГОГИ
           </span>
         </Link>
-        <ul className='flex justify-between w-[25vw]'>
-              <li>
-                <Link
-                  to="/"
-                  className="block py-2 pl-3 pr-4 text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-black md:hover:font-bold md:p-0 transition-all duration-300 ease-in-out"
-                  aria-current="page"
-                >
-                  ТЮЛьПАНЫ
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/"
-                  className="block py-2 pl-3 pr-4 text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-black md:hover:font-bold md:p-0 transition-all duration-300 ease-in-out"
-                  aria-current="page"
-                >
-                  РОЗЫ
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/"
-                  className="block py-2 pl-3 pr-4 text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-black md:hover:font-bold md:p-0 transition-all duration-300 ease-in-out"
-                  aria-current="page"
-                >
-                  ЛОТУС
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/"
-                  className="block py-2 pl-3 pr-4 text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-black md:hover:font-bold md:p-0 transition-all duration-300 ease-in-out"
-                  aria-current="page"
-                >
-                  РОМАШКИ
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/"
-                  className="block py-2 pl-3 pr-4 text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-black md:hover:font-bold md:p-0 transition-all duration-300 ease-in-out"
-                  aria-current="page"
-                >
-                  ГОРШКИ
-                </Link>
-              </li>
-            </ul>
         <button
           type="button"
           className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
