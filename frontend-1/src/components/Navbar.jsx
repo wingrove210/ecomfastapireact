@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { logoutUser } from '../redux/user.slice';
+import '../css/fonts.css'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,7 +34,7 @@ export default function Navbar() {
     <nav className="bg-white border-gray-200">
       <div className="max-w-screen flex items-center justify-between mx-20 p-4 relative">
         <Link to="/" className="flex items-center">
-          <span className="self-center text-2xl font-semibold whitespace-nowrap">
+          <span className="self-center text-2xl whitespace-nowrap font-wave font-thin">
           ЦВЕТЫ ОТ ГОГИ
           </span>
         </Link>

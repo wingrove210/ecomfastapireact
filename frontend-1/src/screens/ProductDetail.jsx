@@ -6,7 +6,9 @@ import Loader from '../components/Loader';
 import Error from '../components/Error';
 import background_1 from '../assets/Blackgroud img 1.svg';
 import background_2 from '../assets/Blackgroud img 2.svg';
-// import Review from '../components/Review';
+import { HiMinus } from "react-icons/hi";
+import { HiPlus } from "react-icons/hi";
+import Review from '../components/Review';
 
 import { getProductById } from '../redux/product.slice';
 
@@ -43,7 +45,19 @@ export default function ProductDetails() {
   if (error) {
     return <Error error={error} />;
   }
+  // const [quantity, setQuantity] = useState(1);
 
+const handleIncrement = () => {
+  if (quantity < product.countInStock) {
+    setQuantity(quantity + 1);
+  }
+};
+
+const handleDecrement = () => {
+  if (quantity > 1) {
+    setQuantity(quantity - 1);
+  }
+};
   return (
     <div className="max-w-[70vw] ml-[5vw] mt-10">
             <img className='absolute bottom-0 left-0' src={background_1} alt='' />
@@ -59,27 +73,22 @@ export default function ProductDetails() {
 
                 <div className="m-2">
                   <h1 className='mt-3 mb-3 text-2xl font-medium'>{product.price} P</h1>
-                  <h1>ID: {product.id}</h1>
-                  <h1>СТРАНА: {product.type}</h1>
-                  <h1>СОРТ: {product.sort}</h1>
-                  <h1>СЕЗОН ЦВЕТЕНИЯ: {product.season}</h1>
-                  <p className='mt-3'>{product.description}</p>
-                  <h1 className='mt-3'>Selected Quantity</h1>
-                  <select
-                    value={quantity}
-                    onChange={(e) => setQuantity(e.target.value)}
-                  >
-                    {[...Array(product.countInStock).keys()].map((x, i) => {
-                      return <option value={i + 1}>{i + 1}</option>;
-                    })}
-                  </select>
-                  <br />
+                  <h1 className='font-next'>ID: {product.id}</h1>
+                  <h1 className='font-next'>СТРАНА: {product.type}</h1>
+                  <h1 className='font-next'>СОРТ: {product.sort}</h1>
+                  <h1 className='font-next'>СЕЗОН ЦВЕТЕНИЯ: {product.season}</h1>
+                  <p className='mt-3 font-next'>{product.description}</p>
+                  <div className='flex justify-center items-center gap-2 mt-3 mr-[10vw]'>
+                    <button className='border-[1px] border-stone-500 rounded-full px-1 py-1' onClick={handleDecrement}><HiMinus /></button>
+                    <div className='font-bold text-stone-600 text-xl'>{quantity}</div>
+                    <button className='border-[1px] border-stone-500 rounded-full px-1 py-1' onClick={handleIncrement}><HiPlus /></button>
+                  </div>
                   {product.countInStock > 0 ? (
                     <button
                       className="bg-[#9E1B3B] mt-5 text-white py-2 px-4 rounded-3xl cursor-pointer"
                       onClick={addCart}
                     >
-                      КУПИТЬ
+                      ДОБАВИТЬ В КОРЗИНУ
                     </button>
                   ) : (
                     <div>
@@ -93,7 +102,7 @@ export default function ProductDetails() {
                     </div>
                   )}
                 </div>
-                {/* <Review product={product} /> */}
+                <Review product={product} />
               </div>
             </div>
             <div className="w-[55vw]">

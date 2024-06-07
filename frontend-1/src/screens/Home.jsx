@@ -6,7 +6,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import background_1 from '../assets/Blackgroud img 1.svg';
 import background_2 from '../assets/Blackgroud img 2.svg';
-
+import '../css/fonts.css'
 
 const categories = [
   { id: 0, name: 'Тюльпаны' },
@@ -53,7 +53,7 @@ export default function HomeScreen() {
       <img className='absolute top-[30vh] right-0' src={background_2} alt='' />
       <ul className='flex justify-center gap-8 top-[-8vh] relative'>
         {categories.map((category) => (
-          <li key={category.id} className='cursor-pointer text-stone-500 hover:text-black transition-all duration-300 ease-in-out'>
+          <li key={category.id} className='cursor-pointer text-stone-500 hover:text-black transition-all duration-300 ease-in-out font-next'>
             <a href="#" onClick={() => handleCategoryClick(category)}>
               {category.name}
             </a>
@@ -77,14 +77,14 @@ export default function HomeScreen() {
                             alt={product.name}
                           />
                         </div>
-                        <h1 className="text-xl font-semibold">{product.name}</h1>
+                        <h1 className="text-xl font-semibold font-next">{product.name}</h1>
                         <h1 className="text-lg font-semibold">{product.price} P</h1>
-                        <h1>ID: {product.id}</h1>
-                        <h1>ВИД: {product.type}</h1>
-                        <h1>Категория: {product.category}</h1>
-                        <h1>СОРТ: {product.sort}</h1>
-                        <h1>СЕЗОН ЦВЕТЕНИЯ: {product.season}</h1>
-                        <button className='bg-[#9E1B3B] px-7 py-2 rounded-3xl text-white mt-5'>Купить</button>
+                        <h1 className='font-next'>ID: {product.id}</h1>
+                        <h1 className='font-next'>ВИД: {product.type}</h1>
+                        <h1 className='font-next'>Категория: {product.category}</h1>
+                        <h1 className='font-next'>СОРТ: {product.sort}</h1>
+                        <h1 className='font-next'>СЕЗОН ЦВЕТЕНИЯ: {product.season}</h1>
+                        <button className='bg-[#9E1B3B] px-7 py-2 rounded-3xl text-white mt-5 font-next'>Купить</button>
                       </Link>
                     </div>
                   </div>

@@ -27,6 +27,10 @@ export default function EditProduct() {
   const [imageUrl, setImageUrl] = useState('');
   const [category, setCategory] = useState('');
   const [description, setDescription] = useState('');
+  const [type, settype] = useState(''); 
+  const [season, setseason] = useState(''); 
+  const [sort, setsort] = useState(''); 
+  const [rating, setrating] = useState(); 
 
   useEffect(() => {
     if (product) {
@@ -37,6 +41,10 @@ export default function EditProduct() {
         setImageUrl(product.image);
         setCategory(product.category);
         setCountInStock(product.countInStock);
+        settype(product.type);
+        setseason(product.season);
+        setsort(product.sort);
+        setrating(product.rating);
       } else {
         dispatch(getProductById(id));
       }
@@ -155,6 +163,66 @@ export default function EditProduct() {
                   value={countInStock}
                   onChange={(e) => {
                     setCountInStock(e.target.value);
+                  }}
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-sm font-medium mb-2">
+                  Type
+                </label>
+                <input
+                  type="text"
+                  required
+                  className="form-input w-full"
+                  placeholder="Count in Stock"
+                  value={type}
+                  onChange={(e) => {
+                    settype(e.target.value);
+                  }}
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-sm font-medium mb-2">
+                  Season
+                </label>
+                <input
+                  type="text"
+                  required
+                  className="form-input w-full"
+                  placeholder="Count in Stock"
+                  value={season}
+                  onChange={(e) => {
+                    setseason(e.target.value);
+                  }}
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-sm font-medium mb-2">
+                  Sort
+                </label>
+                <input
+                  type="text"
+                  required
+                  className="form-input w-full"
+                  placeholder="Count in Stock"
+                  value={sort}
+                  onChange={(e) => {
+                    setsort(e.target.value);
+                  }}
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-sm font-medium mb-2">
+                  Rating
+                </label>
+                <input
+                  type="text"
+                  required
+                  className="form-input w-full"
+                  placeholder="Count in Stock"
+                  value={rating}
+                  onChange={(e) => {
+                    setrating(e.target.value);
                   }}
                 />
               </div>

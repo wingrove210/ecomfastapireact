@@ -4,16 +4,25 @@ import Loader from '../components/Loader';
 import Error from '../components/Error';
 import { Link } from 'react-router-dom';
 import { deleteProduct, getAllProducts } from '../redux/product.slice';
+import { useState } from 'react';
+import axios from 'axios';
+
 
 export default function ProductList() {
   const dispatch = useDispatch();
   const getallproductsstate = useSelector((state) => state.productReducer);
-  const { products, loading, error } = getallproductsstate;
+  const { loading, error } = getallproductsstate;
+  const [prod, setProducts] = useState([]);
 
   useEffect(() => {
     dispatch(getAllProducts());
   }, [dispatch]);
-
+  useEffect(() => {
+    dispatch(getAllProducts());
+    axios.get('http://127.0.0.1:8000/api/product').then((e) => {
+        setProducts(e.data)
+    })
+  }, []);
   return (
     <div className="relative overflow-x-auto">
       <h2 className="text-2xl font-semibold mb-4">Products List</h2>
@@ -42,12 +51,12 @@ export default function ProductList() {
         </thead>
 
         <tbody>
-          {products &&
-            products.map((product) => {
+          {prod &&
+            prod.map((product) => {
               return (
                 <tr
                   key={product.id}
-                  className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                  className="bg-white border-b  dark:border-gray-700"
                 >
                   <td className="px-6 py-4">{product.name}</td>
                   <td className="px-6 py-4">{product.price}</td>

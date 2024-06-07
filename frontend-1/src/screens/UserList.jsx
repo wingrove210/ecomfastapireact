@@ -3,17 +3,24 @@ import { useDispatch, useSelector } from 'react-redux';
 import Loader from '../components/Loader';
 import Error from '../components/Error';
 import { deleteUser, getAllUsers } from '../redux/user.slice';
+import axios from 'axios';
+import { useState } from 'react';
 
 export default function UsersList() {
   const getAllUsersState = useSelector((state) => state.getAllUsersReducer);
-  const { users, loading, error } = getAllUsersState;
-
+  const { loading, error } = getAllUsersState;
+  const [users, setUsers] = useState([]);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getAllUsers());
   }, []);
-
+  useEffect(() => {
+    dispatch(getAllUsers());
+    axios.get('http://127.0.0.1:8000/api/users').then((e) => {
+        setUsers(e.data)
+    })
+  }, []);
   return (
     <div className="mt-8">
       <h2 className="text-2xl font-semibold">Users List</h2>

@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Next_Art_Regular';
+    src: url('fonts/NEXT-ART_Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Wave';
+    src: url('fonts/wavefont-beta-v001-regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
