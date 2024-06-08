@@ -25,7 +25,7 @@ export default function ProductList() {
   }, []);
   return (
     <div className="relative overflow-x-auto">
-      <h2 className="text-2xl font-semibold mb-4">Products List</h2>
+      <h2 className="text-2xl font-semibold mb-4">Список продуктов :</h2>
       {loading && <Loader />}
       {error && <Error error="Something went wrong" />}
 
@@ -33,19 +33,19 @@ export default function ProductList() {
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
             <th scope="col" className="px-6 py-4">
-              Name
+              Название
             </th>
             <th scope="col" className="px-6 py-4">
-              Price
+              Цена
             </th>
             <th scope="col" className="px-6 py-4">
-              Stock
+              Колличество
             </th>
             <th scope="col" className="px-6 py-4">
               Id
             </th>
             <th scope="col" className="px-6 py-4">
-              Actions
+              Действия
             </th>
           </tr>
         </thead>

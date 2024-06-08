@@ -48,14 +48,14 @@ export default function AddProduct() {
         {loading && <Loader />}
         {error && <Error error="Something went wrong" />}
 
-        <h2 className="text-2xl font-semibold mb-4">Add Product</h2>
+        <h2 className="text-2xl font-semibold mb-4">Добавить продукт</h2>
         <form onSubmit={addproduct}>
           <div className="mb-4">
-            <label className="block text-sm font-medium mb-2">Name</label>
+            <label className="block text-sm font-medium mb-2">Название</label>
             <input
               type="text"
               className="form-input w-full"
-              placeholder="Name"
+              placeholder="Название"
               required
               value={name}
               onChange={(e) => {
@@ -64,11 +64,11 @@ export default function AddProduct() {
             />
           </div>
           <div className="mb-4">
-            <label className="block text-sm font-medium mb-2">Price</label>
+            <label className="block text-sm font-medium mb-2">Цена</label>
             <input
               type="number"
               className="form-input w-full"
-              placeholder="Price"
+              placeholder="Цена"
               value={price}
               required
               onChange={(e) => {
@@ -78,13 +78,13 @@ export default function AddProduct() {
           </div>
           <div className="mb-4">
             <label className="block text-sm font-medium mb-2">
-              Description
+              Описание
             </label>
             <input
               type="text"
               required
               className="form-input w-full"
-              placeholder="Description"
+              placeholder="Описание"
               value={description}
               onChange={(e) => {
                 setdescription(e.target.value);
@@ -92,12 +92,12 @@ export default function AddProduct() {
             />
           </div>
           <div className="mb-4">
-            <label className="block text-sm font-medium mb-2">Image URL</label>
+            <label className="block text-sm font-medium mb-2">Ссылка на изображение</label>
             <input
               type="text"
               required
               className="form-input w-full"
-              placeholder="Image URL"
+              placeholder="Ссылка на изображение"
               value={imageurl}
               onChange={(e) => {
                 setimageurl(e.target.value);
@@ -105,12 +105,12 @@ export default function AddProduct() {
             />
           </div>
           <div className="mb-4">
-            <label className="block text-sm font-medium mb-2">Category</label>
+            <label className="block text-sm font-medium mb-2">Категория</label>
             <input
               type="text"
               required
               className="form-input w-full"
-              placeholder="Category"
+              placeholder="Категория"
               value={category}
               onChange={(e) => {
                 setcategory(e.target.value);
@@ -119,13 +119,13 @@ export default function AddProduct() {
           </div>
           <div className="mb-4">
             <label className="block text-sm font-medium mb-2">
-              Count in Stock
+              Колличество
             </label>
             <input
               type="number"
               required
               className="form-input w-full"
-              placeholder="Count in Stock"
+              placeholder="Колличество"
               value={countinstock}
               onChange={(e) => {
                 setcountinstock(e.target.value);
@@ -134,13 +134,13 @@ export default function AddProduct() {
           </div>
           <div className="mb-4">
             <label className="block text-sm font-medium mb-2">
-              Type
+              Тип
             </label>
             <input
               type="text"
               required
               className="form-input w-full"
-              placeholder="Count in Stock"
+              placeholder="Тип"
               value={type}
               onChange={(e) => {
                 settype(e.target.value);
@@ -149,13 +149,13 @@ export default function AddProduct() {
           </div>
           <div className="mb-4">
             <label className="block text-sm font-medium mb-2">
-              Season
+              Сезон
             </label>
             <input
               type="text"
               required
               className="form-input w-full"
-              placeholder="Count in Stock"
+              placeholder="Сезон"
               value={season}
               onChange={(e) => {
                 setseason(e.target.value);
@@ -164,13 +164,13 @@ export default function AddProduct() {
           </div>
           <div className="mb-4">
             <label className="block text-sm font-medium mb-2">
-              Sort
+              Сорт
             </label>
             <input
               type="text"
               required
               className="form-input w-full"
-              placeholder="Count in Stock"
+              placeholder="Сорт"
               value={sort}
               onChange={(e) => {
                 setsort(e.target.value);
@@ -179,13 +179,13 @@ export default function AddProduct() {
           </div>
           <div className="mb-4">
             <label className="block text-sm font-medium mb-2">
-              Rating
+              Рэйтинг
             </label>
             <input
               type="text"
               required
               className="form-input w-full"
-              placeholder="Count in Stock"
+              placeholder="Рэйтинг"
               value={rating}
               onChange={(e) => {
                 setrating(e.target.value);
@@ -196,7 +196,7 @@ export default function AddProduct() {
             className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
             type="submit"
           >
-            Add Product
+            Добавить продукт
           </button>
         </form>
       </div>

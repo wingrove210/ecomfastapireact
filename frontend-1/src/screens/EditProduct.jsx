@@ -81,11 +81,11 @@ export default function EditProduct() {
           <div>
             <form onSubmit={editProduct}>
               <div className="mb-4">
-                <label className="block text-sm font-medium mb-2">Name</label>
+                <label className="block text-sm font-medium mb-2">Название</label>
                 <input
                   type="text"
                   className="form-input w-full"
-                  placeholder="Name"
+                  placeholder="Название"
                   required
                   value={name}
                   onChange={(e) => {
@@ -94,11 +94,11 @@ export default function EditProduct() {
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-sm font-medium mb-2">Price</label>
+                <label className="block text-sm font-medium mb-2">Цена</label>
                 <input
                   type="number"
                   className="form-input w-full"
-                  placeholder="Price"
+                  placeholder="Цена"
                   value={price}
                   required
                   onChange={(e) => {
@@ -108,13 +108,13 @@ export default function EditProduct() {
               </div>
               <div className="mb-4">
                 <label className="block text-sm font-medium mb-2">
-                  Description
+                  Описание
                 </label>
                 <input
                   type="text"
                   required
                   className="form-input w-full"
-                  placeholder="Description"
+                  placeholder="Описание"
                   value={description}
                   onChange={(e) => {
                     setDescription(e.target.value);
@@ -123,13 +123,13 @@ export default function EditProduct() {
               </div>
               <div className="mb-4">
                 <label className="block text-sm font-medium mb-2">
-                  Image URL
+                  Ссылка на изображение
                 </label>
                 <input
                   type="text"
                   required
                   className="form-input w-full"
-                  placeholder="Image URL"
+                  placeholder="Ссылка на изображение"
                   value={imageUrl}
                   onChange={(e) => {
                     setImageUrl(e.target.value);
@@ -138,13 +138,13 @@ export default function EditProduct() {
               </div>
               <div className="mb-4">
                 <label className="block text-sm font-medium mb-2">
-                  Category
+                  Категория
                 </label>
                 <input
                   type="text"
                   required
                   className="form-input w-full"
-                  placeholder="Category"
+                  placeholder="Категория"
                   value={category}
                   onChange={(e) => {
                     setCategory(e.target.value);
@@ -153,13 +153,13 @@ export default function EditProduct() {
               </div>
               <div className="mb-4">
                 <label className="block text-sm font-medium mb-2">
-                  Count in Stock
+                  Колличество
                 </label>
                 <input
                   type="number"
                   required
                   className="form-input w-full"
-                  placeholder="Count in Stock"
+                  placeholder="Колличество"
                   value={countInStock}
                   onChange={(e) => {
                     setCountInStock(e.target.value);
@@ -168,13 +168,13 @@ export default function EditProduct() {
               </div>
               <div className="mb-4">
                 <label className="block text-sm font-medium mb-2">
-                  Type
+                  Тип
                 </label>
                 <input
                   type="text"
                   required
                   className="form-input w-full"
-                  placeholder="Count in Stock"
+                  placeholder="Тип"
                   value={type}
                   onChange={(e) => {
                     settype(e.target.value);
@@ -183,13 +183,13 @@ export default function EditProduct() {
               </div>
               <div className="mb-4">
                 <label className="block text-sm font-medium mb-2">
-                  Season
+                  Сезон
                 </label>
                 <input
                   type="text"
                   required
                   className="form-input w-full"
-                  placeholder="Count in Stock"
+                  placeholder="Сезон"
                   value={season}
                   onChange={(e) => {
                     setseason(e.target.value);
@@ -198,13 +198,13 @@ export default function EditProduct() {
               </div>
               <div className="mb-4">
                 <label className="block text-sm font-medium mb-2">
-                  Sort
+                  Сорт
                 </label>
                 <input
                   type="text"
                   required
                   className="form-input w-full"
-                  placeholder="Count in Stock"
+                  placeholder="Сорт"
                   value={sort}
                   onChange={(e) => {
                     setsort(e.target.value);
@@ -213,13 +213,13 @@ export default function EditProduct() {
               </div>
               <div className="mb-4">
                 <label className="block text-sm font-medium mb-2">
-                  Rating
+                  Рэйтинг
                 </label>
                 <input
                   type="text"
                   required
                   className="form-input w-full"
-                  placeholder="Count in Stock"
+                  placeholder="Рэйтинг"
                   value={rating}
                   onChange={(e) => {
                     setrating(e.target.value);
@@ -230,7 +230,7 @@ export default function EditProduct() {
                 className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                 type="submit"
               >
-                Edit Product
+                Редактировать
               </button>
             </form>
           </div>

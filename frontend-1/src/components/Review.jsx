@@ -37,7 +37,7 @@ export default function Review({ product }) {
 
   return (
     <div className="shadow p-3 mb-5 bg-white rounded mx-2">
-      <h2>Give Your Review</h2>
+      <h2>ОСТАВИТЬ ОТЗЫВ</h2>
 
       <Rating
         className="text-orange"
@@ -61,10 +61,10 @@ export default function Review({ product }) {
         onClick={sendReview}
         className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
       >
-        Submit Review
+        ОТПРАВИТЬ
       </button>
 
-      <h2 className="mt-3">Latest Reviews</h2>
+      <h2 className="mt-3">ПОСЛЕДНИЕ ОТЗЫВЫ</h2>
 
       {product && product.reviews && product.reviews.length > 0 ? (
         product.reviews.map((review) => (
@@ -83,7 +83,7 @@ export default function Review({ product }) {
           </div>
         ))
       ) : (
-        <p>No reviews available</p>
+        <p>ЗДЕСЬ НЕТ ОТЗЫВОВ</p>
       )}
     </div>
   );

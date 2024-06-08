@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Error from '../components/Error';
 import Loader from '../components/Loader';
@@ -36,7 +36,7 @@ export default function ProfileScreen() {
   return (
     <div className="justify-center mt-8">
       <div className="w-2/3 mx-auto bg-white shadow p-6 rounded">
-        <h2 className="text-center mb-6">Update</h2>
+        <h2 className="text-center mb-6">Обновить</h2>
 
         {loading && <Loader />}
         {error && <Error error="Something went wrong" />}
@@ -77,7 +77,7 @@ export default function ProfileScreen() {
 
           <div>
             <label htmlFor="password" className="block mb-2 font-medium">
-              Password
+              Пароль
             </label>
             <input
               type="password"
@@ -92,7 +92,7 @@ export default function ProfileScreen() {
 
           <div>
             <label htmlFor="confirmPassword" className="block mb-2 font-medium">
-              Confirm Password
+              Подтвердить пароль
             </label>
             <input
               type="password"
@@ -110,7 +110,7 @@ export default function ProfileScreen() {
               type="submit"
               className="bg-blue-500 text-white px-4 py-2 rounded"
             >
-              UPDATE
+              ОБНОВИТЬ
             </button>
           </div>
         </form>

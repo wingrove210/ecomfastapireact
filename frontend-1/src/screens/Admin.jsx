@@ -26,7 +26,7 @@ export default function AdminScreen() {
       <div className="flex justify-center">
         <div className="w-3/4">
           <h2 className="text-2xl font-semibold text-center mb-4">
-            Admin Panel
+            Админ панель
           </h2>
           <ul className="admin p-2 bg-gray-100 rounded flex space-x-2">
             <li>
@@ -34,7 +34,7 @@ export default function AdminScreen() {
                 to="/admin/userslist"
                 className="text-black block py-2 px-4 hover:bg-gray-200 rounded"
               >
-                Users List
+                Список пользователей
               </Link>
             </li>
             <li>
@@ -42,7 +42,7 @@ export default function AdminScreen() {
                 to="/admin/productslist"
                 className="text-black block py-2 px-4 hover:bg-gray-200 rounded"
               >
-                Products List
+                Сприсок товаров
               </Link>
             </li>
             <li>
@@ -50,7 +50,7 @@ export default function AdminScreen() {
                 to="/admin/addnewproduct"
                 className="text-black block py-2 px-4 hover:bg-gray-200 rounded"
               >
-                Add New Product
+                Добавить новый товар
               </Link>
             </li>
             <li>
@@ -58,7 +58,7 @@ export default function AdminScreen() {
                 to="/admin/orderslist"
                 className="text-black block py-2 px-4 hover:bg-gray-200 rounded"
               >
-                Orders List
+                Список заказов
               </Link>
             </li>
           </ul>

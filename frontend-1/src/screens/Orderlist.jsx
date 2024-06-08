@@ -18,16 +18,16 @@ export default function Orderslist() {
       {getAllOrdersLoading && <Loader />}
       {getAllOrdersError && <Error error="something went wrong" />}
       <div className="mx-auto">
-        <h2 className="text-center text-2xl font-semibold">Orders List</h2>
+        <h2 className="text-center text-2xl font-semibold">Список заказов</h2>
         <table className="table border border-gray-300 mt-4">
           <thead>
             <tr>
-              <th className="px-4 py-2">Order Id</th>
+              <th className="px-4 py-2">ID заказов</th>
               <th className="px-4 py-2">Email</th>
-              <th className="px-4 py-2">User Id</th>
-              <th className="px-4 py-2">Amount</th>
-              <th className="px-4 py-2">Date</th>
-              <th className="px-4 py-2">Transaction Id</th>
+              <th className="px-4 py-2">ID пользователя</th>
+              <th className="px-4 py-2">Колличество</th>
+              <th className="px-4 py-2">Дата</th>
+              <th className="px-4 py-2">ID транзакции</th>
             </tr>
           </thead>
 

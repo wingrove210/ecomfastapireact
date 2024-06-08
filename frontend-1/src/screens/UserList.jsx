@@ -23,16 +23,16 @@ export default function UsersList() {
   }, []);
   return (
     <div className="mt-8">
-      <h2 className="text-2xl font-semibold">Users List</h2>
+      <h2 className="text-2xl font-semibold">Список пользователей</h2>
       {loading && <Loader />}
       {error && <Error error="Something went wrong" />}
       <table className="table-auto w-full">
         <thead>
           <tr>
             <th className="px-4 py-2">User Id</th>
-            <th className="px-4 py-2">Name</th>
+            <th className="px-4 py-2">Имя</th>
             <th className="px-4 py-2">Email</th>
-            <th className="px-4 py-2">Delete</th>
+            <th className="px-4 py-2">Удалить</th>
           </tr>
         </thead>
         <tbody>

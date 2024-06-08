@@ -11,7 +11,7 @@ import '../css/fonts.css'
 const categories = [
   { id: 0, name: 'Тюльпаны' },
   { id: 1, name: 'Розы' },
-  { id: 2, name: 'ЛОТУС' },
+  { id: 2, name: 'ЛОТОС' },
   { id: 2, name: 'РОМАШКИ' },
   { id: 2, name: 'ГОРШКИ' },
 ];

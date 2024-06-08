@@ -8,7 +8,7 @@ import background_1 from '../assets/Blackgroud img 1.svg';
 import background_2 from '../assets/Blackgroud img 2.svg';
 import { HiMinus } from "react-icons/hi";
 import { HiPlus } from "react-icons/hi";
-import Review from '../components/Review';
+// import Review from '../components/Review';
 
 import { getProductById } from '../redux/product.slice';
 
@@ -92,17 +92,17 @@ const handleDecrement = () => {
                     </button>
                   ) : (
                     <div>
-                      <h1>Out Of Stock</h1>
+                      <h1>Закончилось</h1>
                       <button
                         className="bg-gray-300 text-gray-500 py-2 px-4 rounded-md cursor-not-allowed"
                         disabled
                       >
-                        Add to Cart
+                        Добавить в корзину
                       </button>
                     </div>
                   )}
                 </div>
-                <Review product={product} />
+                {/* <Review product={product} /> */}
               </div>
             </div>
             <div className="w-[55vw]">

@@ -35,7 +35,7 @@ export default function Navbar() {
       <div className="max-w-screen flex items-center justify-between mx-20 p-4 relative">
         <Link to="/" className="flex items-center">
           <span className="self-center text-2xl whitespace-nowrap font-wave font-thin">
-          ЦВЕТЫ ОТ ГОГИ
+          FLOWERS 495
           </span>
         </Link>
         <button
