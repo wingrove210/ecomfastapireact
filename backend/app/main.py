@@ -10,7 +10,6 @@ from users import usersrouter
 from review import reviewrouter
 from product import productrouter
 from order import orderrouter
-
 from fastapi.middleware.cors import CORSMiddleware
 
 

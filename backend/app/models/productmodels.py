@@ -24,4 +24,3 @@ class ProductModel(Base):
     season = Column(String(25))
 
     reviews_user = relationship("ReviewModel", back_populates="product")
-
